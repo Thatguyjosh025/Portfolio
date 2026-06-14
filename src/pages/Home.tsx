@@ -1,82 +1,85 @@
+// src/pages/Home.tsx
+import { motion } from "framer-motion";
 import ProjectCard from "../components/ProjectCard";
+import SkillsSection from "../components/SkillSection";
+import TechStack from "../components/TechStack";
 
 const projects = [
   {
     id: "1",
-    title: "E-Commerce Website",
-    description: "A fully responsive e-commerce platform built with React and Node.js.",
-    imageUrl: "/images/ecommerce-thumbnail.jpg",
-    techStack: ["React", "Node.js", "MongoDB", "Express"],
+    title: "Violation Monitoring System",
+    description: "A system designed to track, record, and manage violations with automated reporting and analytics.",
+    imageUrl: "/images/Central.jpg",
   },
-  {
-    id: "2",
-    title: "Task Management App",
-    description: "A productivity app for managing tasks with drag-and-drop functionality.",
-    imageUrl: "/images/task-app-thumbnail.jpg",
-    techStack: ["React", "Firebase", "TypeScript"],
-  },
-];
-
-// tech 
-const myTechStack = [
-  "HTML5",
-  "CSS3",
-  "JavaScript",
-  "MySQL",
-  "Bootstrap",
-  "Laravel",
+  // {
+  //   id: "2",
+  //   title: "Inventory Management System",
+  //   description: "A platform for monitoring stock levels, managing product entries, and generating inventory reports.",
+  //   imageUrl: "/images/task-app-thumbnail.jpg",
+  // },
 ];
 
 export default function Home() {
   return (
     <div>
-      {/* Hero Section (Home + About) */}
-      <section className="py-5 bg-light">
-        <div className="container text-center">
-          <h1 className="display-4 fw-bold mb-3">Josh Calinog</h1>
-          <p className="lead mb-4">Full-Stack Developer</p>
-          <p className="col-md-8 mx-auto">
-            I specialize in building modern web applications with React, Node.js, and MongoDB.
-            Passionate about creating clean, efficient, and user-friendly experiences.
-          </p>
+      {/* Hero Section */}
+      <section className="hero">
+        <div className="container">
+          <motion.div
+            className="hero-content fade-in"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
+            <h1>Josh Calinog</h1>
+            <p className="lead fw-bold">Backend Developer, QA Manual Tester & Project Manager</p>
+            <p className="col-md-8 mx-auto">
+              I specialize in building backend systems, ensuring software quality through testing, and managing projects from start to finish.
+            </p>
+            <motion.a
+              href="#skills"
+              className="btn btn-custom btn-primary btn-lg mt-3"
+              whileHover={{
+                y: -3,
+                scale: 1.05,
+                boxShadow: "0 6px 20px rgba(0, 0, 0, 0.15)",
+                transition: { duration: 0.3, ease: "easeOut" }
+              }}
+              whileTap={{ scale: 0.95 }}
+            >
+              Explore My Skills
+            </motion.a>
+          </motion.div>
         </div>
       </section>
 
-        {/* Projects Section */}
-      <section className="py-5 bg-light">
+      {/* Skills Section */}
+      <section id="skills">
+        <SkillsSection />
+      </section>
+
+      {/* Tech Stack Section */}
+      <TechStack />
+
+      {/* Projects Section */}
+      <section id="projects" className="projects">
         <div className="container">
-          <h2 className="text-center mb-5">My Projects</h2>
+          <motion.h2
+            className="text-center mb-5"
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            My Projects
+          </motion.h2>
           <div className="row">
-            {projects.map((project) => (
+            {projects.map((project, index) => (
               <ProjectCard key={project.id} project={project} />
             ))}
           </div>
         </div>
       </section>
-
-      {/* Tech Stack Section */}
-      <section className="py-5">
-        <div className="container">
-          <h2 className="text-center mb-5">Tech Stack</h2>
-          <div className="row justify-content-center">
-            <div className="col-lg-8">
-              <div className="d-flex flex-wrap justify-content-center gap-3">
-                {myTechStack.map((tech, index) => (
-                  <span
-                    key={index}
-                    className="badge bg-dark fs-5 p-3 text-white"
-                    style={{ fontSize: "1rem" }}
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-
     </div>
   );
 }

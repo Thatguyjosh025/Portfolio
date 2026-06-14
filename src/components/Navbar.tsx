@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-white shadow-sm sticky-top">
+    <nav className="navbar navbar-expand-lg fixed-top">
       <div className="container">
-        <Link to="/" className="navbar-brand fw-bold">
+        <Link to="/" className="navbar-brand">
           Josh Calinog
         </Link>
         <button
