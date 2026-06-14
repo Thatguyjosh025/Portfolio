@@ -74,7 +74,7 @@ export default function Home() {
             My Projects
           </motion.h2>
           <div className="row">
-            {projects.map((project, index) => (
+            {projects.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
           </div>
