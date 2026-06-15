@@ -11,7 +11,7 @@ const skills = [
     title: "Quality Assurance",
     icon: "bi bi-shield-check",
     description:
-      "I ensure software reliability through automated and manual testing. Skilled in writing test cases, identifying bugs, and improving product quality.",
+      "I ensure software reliability through manual testing. Skilled in writing test cases, identifying bugs, and improving product quality.",
   },
   {
     title: "Project Management",

@@ -129,13 +129,13 @@ export default function ProjectPage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 1 }}
           >
-            <a
+            {/* <a
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-custom btn-outline-dark"
             >
               <i className="bi bi-github me-2"></i> GitHub
-            </a>
+            </a> */}
           </motion.div>
         </div>
       </div>
